@@ -293,6 +293,7 @@ const SparklesCore = ({ className, isDark }: { className?: string; isDark: boole
   </div>
 );
 
+
 const DigiPullWebsite = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDark, setIsDark] = useState(true);
@@ -308,14 +309,7 @@ const DigiPullWebsite = () => {
     { number: '200+', label: 'Categories', icon: BarChart3 }
   ];
 
-  const reputationStats = [
-    { percentage: '91%', description: 'Of Consumers Regularly Or Occasionally Read Online Ratings' },
-    { percentage: '84%', description: 'Of People Trust Online Ratings And They Take Them As Their Personal Recommendation' },
-    { percentage: '87%', description: 'Of People Say That Product Needs Rating of 4-5 Stars Before They Will Use Them' },
-    { percentage: '74%', description: 'Of People Felt That A Positive Rating Made Them Trust The Local Business More' },
-    { percentage: '59%', description: 'Of Consumers Compares Every Product On The Basis Of Ratings Before They Make Any Decision' },
-    { percentage: '19%', description: 'On Average, Increase In Single Star Tends To 19% Increase In Sales Growth' }
-  ];
+
 
   const services = [
     {
@@ -523,6 +517,7 @@ const DigiPullWebsite = () => {
                     </p>
                   </div>
                 </div>
+                
 
                 {/* Features List */}
                 <div className="space-y-4 mb-8">
@@ -552,6 +547,7 @@ const DigiPullWebsite = () => {
                 </MovingBorder>
               </div>
             </div>
+            
 
             {/* Right Image with Animation */}
             <div className="relative">
@@ -626,6 +622,82 @@ const DigiPullWebsite = () => {
             </div>
           </div>
         </div>
+        <section className="bg-black py-16 px-6">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    {/* Card 1 */}
+    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+      <div className="flex items-center mb-4">
+        <span className="text-yellow-400 text-3xl mr-3">⭐</span>
+        <h3 className="text-xl font-bold text-white">91% Consumers Read Ratings</h3>
+      </div>
+      <p className="text-gray-400">
+        91% of consumers regularly or occasionally read online ratings.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+      <div className="flex items-center mb-4">
+        <span className="text-green-400 text-3xl mr-3">🔒</span>
+        <h3 className="text-xl font-bold text-white">84% Trust Ratings</h3>
+      </div>
+      <p className="text-gray-400">
+        84% of people trust online ratings and treat them like personal recommendations.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+      <div className="flex items-center mb-4">
+        <span className="text-blue-400 text-3xl mr-3">5⭐</span>
+        <h3 className="text-xl font-bold text-white">87% Need 4-5 Stars</h3>
+      </div>
+      <p className="text-gray-400">
+        87% of people say a product needs 4–5 stars before they will use it.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+      <div className="flex items-center mb-4">
+        <span className="text-pink-400 text-3xl mr-3">🤝</span>
+        <h3 className="text-xl font-bold text-white">74% Trust Local Business</h3>
+      </div>
+      <p className="text-gray-400">
+        74% of people felt that a positive rating made them trust the local business more.
+      </p>
+    </div>
+
+    {/* Card 5 */}
+    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+      <div className="flex items-center mb-4">
+        <span className="text-purple-400 text-3xl mr-3">📊</span>
+        <h3 className="text-xl font-bold text-white">59% Compare Products</h3>
+      </div>
+      <p className="text-gray-400">
+        59% of consumers compare every product based on ratings before making a decision.
+      </p>
+    </div>
+
+    {/* Card 6 */}
+    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+      <div className="flex items-center mb-4">
+        <span className="text-red-400 text-3xl mr-3">📈</span>
+        <h3 className="text-xl font-bold text-white">19% Sales Growth</h3>
+      </div>
+      <p className="text-gray-400">
+        A single star increase can boost sales by 19%. Higher ratings = higher sales, while one negative review can cost customers.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 
         {/* Background Animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -675,45 +747,41 @@ const DigiPullWebsite = () => {
           </div>
         </div>
       </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 px-6 relative">
+      <section id="stats" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className={`text-5xl font-bold mb-8 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
-                Why Invest In Our Services?
-              </h2>
-              <p className={`${mutedTextColor} mb-8 text-lg leading-relaxed`}>
-                With an impressive track record in boosting client revenues, our services stand out as a prime choice for brand enhancement.
-              </p>
-              <div className="space-y-6">
-                {['Accelerate Your e-Commerce Store Sales', 'Increase your customer satisfaction', 'Improve your search rankings', 'Maximize your brand awareness', 'Beat your competition'].map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-400 to-blue-400 flex items-center justify-center">
-                      <CheckCircle className="h-5 w-5 text-white" />
-                    </div>
-                    <span className={`${mutedTextColor} text-lg`}>{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <MovingBorder className="h-full" isDark={isDark}>
-              <div className="p-8 h-full">
-                <div className="mb-6">
-                  <Sparkles className="h-12 w-12 text-purple-400 mb-4" />
-                  <h2 className={`text-3xl font-bold ${cardTextColor} mb-4`}>Accelerate Your e-Commerce Store Sales</h2>
-                </div>
-                <p className={`${mutedTextColor} leading-relaxed`}>
-                  Brand Build Up Management enhances your sales on every e-Commerce platform. The influence of positive response 
-                  increases sales of your product by considering buyer's behavior and e-Commerce platform algorithms.
-                </p>
-              </div>
-            </MovingBorder>
+          <div className="text-center mb-16">
+            <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
+              Transformation by Numbers
+            </h2>
+            <p className={`${mutedTextColor} max-w-2xl mx-auto text-lg`}>
+              Numbers don't lie. Our tech-driven approach ensures your online reputation stays pristine.
+            </p>
           </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {stats.map((stat, index) => (
+              <div key={index} className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500 animate-pulse"></div>
+                <div className={`relative ${isDark ? 'bg-white/95' : 'bg-white/95'} backdrop-blur-sm rounded-3xl p-8 text-center shadow-2xl border ${isDark ? 'border-white/20' : 'border-gray-200/50'} group-hover:bg-white group-hover:shadow-3xl group-hover:scale-105 transition-all duration-500`}>
+                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                    <stat.icon className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="text-4xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <AnimatedCounter end={stat.number} />
+                  </div>
+                  <div className="text-slate-700 font-semibold">{stat.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Reputation Statistics */}
+         
         </div>
       </section>
+
+      {/* Benefits Section */}
+      
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 px-6 relative">
@@ -814,38 +882,7 @@ const DigiPullWebsite = () => {
   </div>
   
 </section>
-<section id="stats" className="py-20 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
-              Transformation by Numbers
-            </h2>
-            <p className={`${mutedTextColor} max-w-2xl mx-auto text-lg`}>
-              Numbers don't lie. Our tech-driven approach ensures your online reputation stays pristine.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {stats.map((stat, index) => (
-              <div key={index} className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500 animate-pulse"></div>
-                <div className={`relative ${isDark ? 'bg-white/95' : 'bg-white/95'} backdrop-blur-sm rounded-3xl p-8 text-center shadow-2xl border ${isDark ? 'border-white/20' : 'border-gray-200/50'} group-hover:bg-white group-hover:shadow-3xl group-hover:scale-105 transition-all duration-500`}>
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                    <stat.icon className="h-10 w-10 text-white" />
-                  </div>
-                  <div className="text-4xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    <AnimatedCounter end={stat.number} />
-                  </div>
-                  <div className="text-slate-700 font-semibold">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Reputation Statistics */}
-         
-        </div>
-      </section>
      
 
       {/* Footer */}
