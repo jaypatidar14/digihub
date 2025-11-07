@@ -84,7 +84,7 @@ const FloatingNavbar = ({ isDark, setIsDark }: { isDark: boolean; setIsDark: (is
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Digihub
+              Digimond
             </div>
 
             {/* Desktop Menu */}
@@ -303,10 +303,10 @@ const DigiPullWebsite = () => {
   }, []);
 
   const stats = [
-    { number: '70K+', label: 'Organic feedbacks delivered', icon: MessageSquare },
+    { number: '100K+', label: 'Organic feedbacks delivered', icon: MessageSquare },
     { number: '5K+', label: 'Clients', icon: Users },
-    { number: '100+', label: 'Products Tested', icon: Target },
-    { number: '200+', label: 'Categories', icon: BarChart3 }
+    { number: '200+', label: 'Products Tested', icon: Target },
+    { number: '150+', label: 'Categories', icon: BarChart3 }
   ];
 
 
@@ -314,37 +314,37 @@ const DigiPullWebsite = () => {
   const services = [
     {
       title: 'Online Reputation Management',
-      description: 'Enhancing and maintaining a healthy brand reputation on online marketplace.',
+      description: 'Managing and boosting brand eputation on digitaal marketplace.',
       icon: Shield,
       gradient: 'from-blue-600 to-cyan-600'
     },
     {
       title: 'Web Scraping',
-      description: 'Crafting tailored bots for your data needs, including Brand Monitoring solutions.',
+      description: 'Building custom bots to meet your data needs with brand monetoring solution.',
       icon: Eye,
       gradient: 'from-purple-600 to-pink-600'
     },
     {
       title: 'Business Automation',
-      description: 'Auto-assign tasks, send WhatsApp messages, and much more.',
+      description: 'Enhance productivity with Auto - assign tasks send whatsapp messaages and many more . Get powered by hundreds of new bussiness tasks for a fast start.',
       icon: Zap,
       gradient: 'from-yellow-600 to-orange-600'
     },
     {
       title: 'Email Marketing',
-      description: 'Engage your audience seamlessly and affordably in real-time interactions.',
+      description: 'Interect with your audience seamlessly and cost-effectively in real -time .',
       icon: Mail,
       gradient: 'from-green-600 to-emerald-600'
     },
     {
       title: 'Micro Influencer Marketing',
-      description: 'Unlock the Power of Micro-Influencers: Amplify Your Reach with Our Magic Touch!',
+      description: 'Unlock the Power of Micro - Influencess : Boost your brands reach through strategic colloboration with us .',
       icon: Users,
       gradient: 'from-red-600 to-rose-600'
     },
     {
       title: 'Affiliate Marketing',
-      description: 'Empower Your Business: Partner with Us for Profitable Affiliate Marketing Solutions!',
+      description: 'Enhance your business : partonet with use for Profitable Affiliate Marketing Solution!',
       icon: TrendingUp,
       gradient: 'from-indigo-600 to-blue-600'
     }
@@ -426,20 +426,20 @@ const DigiPullWebsite = () => {
             </h1>
             
             <p className={`text-xl ${mutedTextColor} mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up`} style={{ animationDelay: '0.5s' }}>
-              We are a technology-driven premier provider of Online Reputation Management services in India.
-              Focus on services where technology, innovation, and capital unlock long-term value.
+              We are a Indian leading technology-driven premier provider of Online Reputation Management Services 
+            
             </p>
             
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
               <MovingBorder isDark={isDark}>
                 <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center space-x-2 group">
-                  <span>Start Your Journey</span>
+                  <span>Brand</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </MovingBorder>
               
               <button className={`px-8 py-4 border ${isDark ? 'border-white/20 text-white hover:bg-white/5 hover:border-white/40' : 'border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'} font-semibold rounded-2xl transition-all duration-300`}>
-                View Services
+                Blogger/Influencer
               </button>
             </div>
           </div>
@@ -512,8 +512,8 @@ const DigiPullWebsite = () => {
                       As Per Our Data Analysis,
                     </p>
                     <p className={`text-lg ${mutedTextColor} leading-relaxed mb-6`}>
-                      We Found That How Top Brands Built Their Reputation And Increased Their Sells 
-                      Reaching At Topmost Level With Exponential Growth.
+                      According to Our data insight top brands achieved remarkable grwoth and build strong repuation through satisfied 
+                      moves , hitting peak levels .
                     </p>
                   </div>
                 </div>
@@ -622,78 +622,96 @@ const DigiPullWebsite = () => {
             </div>
           </div>
         </div>
-        <section className="bg-black py-16 px-6">
+
+
+
+        
+        
+        
+        <section className={`py-20 px-6 relative ${isDark ? 'bg-black' : 'bg-gray-50'}`}>
+  <div className="max-w-7xl mx-auto text-center">
+    {/* Heading */}
+    <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
+      Importance Of Reputation Building
+    </h2>
+
+    {/* Subheading text */}
+    <p className={`text-xl ${mutedTextColor} max-w-2xl mx-auto mb-12`}>
+      Why trust, ratings, and reviews drive success in eCommerce.
+    </p>
+  </div>
+
+  {/* Cards Grid */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
     {/* Card 1 */}
-    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+    <div className={`${isDark ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-gray-200/20'} border rounded-2xl p-6 shadow-lg backdrop-blur-sm`}>
       <div className="flex items-center mb-4">
         <span className="text-yellow-400 text-3xl mr-3">⭐</span>
-        <h3 className="text-xl font-bold text-white">91% Consumers Read Ratings</h3>
+        <h3 className={`text-xl font-bold ${cardTextColor}`}>90% Consumers Read Ratings</h3>
       </div>
-      <p className="text-gray-400">
-        91% of consumers regularly or occasionally read online ratings.
+      <p className={mutedTextColor}>
+        90% of consumers regularly or occasionally read online ratings.
       </p>
     </div>
 
     {/* Card 2 */}
-    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+    <div className={`${isDark ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-gray-200/20'} border rounded-2xl p-6 shadow-lg backdrop-blur-sm`}>
       <div className="flex items-center mb-4">
         <span className="text-green-400 text-3xl mr-3">🔒</span>
-        <h3 className="text-xl font-bold text-white">84% Trust Ratings</h3>
+        <h3 className={`text-xl font-bold ${cardTextColor}`}>80% Trust Ratings</h3>
       </div>
-      <p className="text-gray-400">
-        84% of people trust online ratings and treat them like personal recommendations.
+      <p className={mutedTextColor}>
+        80% of people trust online ratings and treat them like personal recommendations.
       </p>
     </div>
 
     {/* Card 3 */}
-    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+    <div className={`${isDark ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-gray-200/20'} border rounded-2xl p-6 shadow-lg backdrop-blur-sm`}>
       <div className="flex items-center mb-4">
         <span className="text-blue-400 text-3xl mr-3">5⭐</span>
-        <h3 className="text-xl font-bold text-white">87% Need 4-5 Stars</h3>
+        <h3 className={`text-xl font-bold ${cardTextColor}`}>85% Need 4-5 Stars</h3>
       </div>
-      <p className="text-gray-400">
-        87% of people say a product needs 4–5 stars before they will use it.
+      <p className={mutedTextColor}>
+        85% of people say a product needs 4–5 stars before they will use it.
       </p>
     </div>
 
     {/* Card 4 */}
-    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+    <div className={`${isDark ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-gray-200/20'} border rounded-2xl p-6 shadow-lg backdrop-blur-sm`}>
       <div className="flex items-center mb-4">
         <span className="text-pink-400 text-3xl mr-3">🤝</span>
-        <h3 className="text-xl font-bold text-white">74% Trust Local Business</h3>
+        <h3 className={`text-xl font-bold ${cardTextColor}`}>70% Trust Local Business</h3>
       </div>
-      <p className="text-gray-400">
-        74% of people felt that a positive rating made them trust the local business more.
+      <p className={mutedTextColor}>
+        70% of people trusted the local bussiness more when they say a positive rating
       </p>
     </div>
 
     {/* Card 5 */}
-    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+    <div className={`${isDark ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-gray-200/20'} border rounded-2xl p-6 shadow-lg backdrop-blur-sm`}>
       <div className="flex items-center mb-4">
         <span className="text-purple-400 text-3xl mr-3">📊</span>
-        <h3 className="text-xl font-bold text-white">59% Compare Products</h3>
+        <h3 className={`text-xl font-bold ${cardTextColor}`}>60% Compare Products</h3>
       </div>
-      <p className="text-gray-400">
-        59% of consumers compare every product based on ratings before making a decision.
+      <p className={mutedTextColor}>
+        60% of consumers compare every product before buying.
       </p>
     </div>
 
     {/* Card 6 */}
-    <div className="bg-[rgb(16,18,35)] border border-gray-700 rounded-2xl p-6 shadow-lg">
+    <div className={`${isDark ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-gray-200/20'} border rounded-2xl p-6 shadow-lg backdrop-blur-sm`}>
       <div className="flex items-center mb-4">
         <span className="text-red-400 text-3xl mr-3">📈</span>
-        <h3 className="text-xl font-bold text-white">19% Sales Growth</h3>
+        <h3 className={`text-xl font-bold ${cardTextColor}`}>20% Sales Growth</h3>
       </div>
-      <p className="text-gray-400">
-        A single star increase can boost sales by 19%. Higher ratings = higher sales, while one negative review can cost customers.
+      <p className={mutedTextColor}>
+       On average Increase In single star growth highes rating-highes Sales but a single Negative review can Loose customers.
       </p>
     </div>
-
   </div>
 </section>
 
+       
 
 
 
@@ -722,12 +740,12 @@ const DigiPullWebsite = () => {
       {/* Services Section */}
       <section id="services" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+            <div className="text-center mb-16">
             <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
-              Our Services
+              Customize for business team like yours
             </h2>
             <p className={`${mutedTextColor} max-w-2xl mx-auto text-lg`}>
-              Designed for business teams like yours. We focus on services where technology, innovation, and capital can unlock long-term value.
+             At Digimond we focus on utilizing technology innovation and capital in services to drive long-term value creation and economic growth.
             </p>
           </div>
           
@@ -754,7 +772,7 @@ const DigiPullWebsite = () => {
               Transformation by Numbers
             </h2>
             <p className={`${mutedTextColor} max-w-2xl mx-auto text-lg`}>
-              Numbers don't lie. Our tech-driven approach ensures your online reputation stays pristine.
+              Data tells the truth . Our tech powered approach maintain a pristine online reputation for you we sfeguard your brands digital image.
             </p>
           </div>
           
@@ -780,107 +798,123 @@ const DigiPullWebsite = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
-              What Our Clients Say
-            </h2>
-            <p className={`${mutedTextColor} text-lg`}>See testimonials from our satisfied customers</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <GradientCard key={index} className="p-8" isDark={isDark}>
-                <div className="flex mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className={`${mutedTextColor} mb-6 italic text-lg leading-relaxed`}>"{testimonial.content}"</p>
-                <div className={`border-t ${isDark ? 'border-white/10' : 'border-gray-200'} pt-6`}>
-                  <div className={`font-bold ${cardTextColor} text-lg`}>{testimonial.name}</div>
-                  <div className={mutedTextColor}>{testimonial.role}</div>
-                </div>
-              </GradientCard>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-12 px-6 max-w-4xl mx-auto">
-  <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
+     
+      {/* Why Invest Section */}
+<section className="py-12 px-6 max-w-4xl mx-auto">
+  <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
     Why Invest In Our Brand Build Up Management Services?
   </h2>
-  <p className="text-center text-gray-600 mb-10">
-    With an impressive track record in boosting client revenues, our services
-    stand out as a prime choice for brand enhancement. Our commitment to
-    delivering tangible, positive outcomes resonates with customers, making us a
-    trusted partner in driving impactful results.
+  <p className={`${mutedTextColor} text-lg text-center mb-6`}>
+    With an impressive track record in boosting client revenues, our
+    services stand out as a prime choice for brand enhancement.
   </p>
 
   <div className="space-y-4">
-    {/* Item 1 */}
-    <details className="border rounded-xl shadow-sm p-5 bg-[#0F172A]">
-      <summary className="font-semibold cursor-pointer text-white text-lg">
-        Accelerate Your e-Commerce Store Sales
-      </summary>
-      <p className="mt-3 text-gray-300 text-sm">
-        Our proven strategies help optimize conversion funnels, reduce cart
-        abandonment, and increase repeat purchases, ensuring steady revenue
-        growth.
-      </p>
-    </details>
-
-    {/* Item 2 */}
-    <details className="border rounded-xl shadow-sm p-5 bg-[#0F172A]">
-      <summary className="font-semibold cursor-pointer text-white text-lg">
-        Increase Your Customer Satisfaction
-      </summary>
-      <p className="mt-3 text-gray-300 text-sm">
-        We implement customer-centric solutions such as personalized
-        experiences, faster support, and loyalty programs to keep your customers
-        happy.
-      </p>
-    </details>
-
-    {/* Item 3 */}
-    <details className="border rounded-xl shadow-sm p-5 bg-[#0F172A]">
-      <summary className="font-semibold cursor-pointer text-white text-lg">
-        Improve Your Search Rankings
-      </summary>
-      <p className="mt-3 text-gray-300 text-sm">
-        Our SEO-first approach ensures your brand ranks higher on search
-        engines, driving organic traffic and long-term visibility.
-      </p>
-    </details>
-
-    {/* Item 4 */}
-    <details className="border rounded-xl shadow-sm p-5 bg-[#0F172A]">
-      <summary className="font-semibold cursor-pointer text-white text-lg">
-        Maximize Your Brand Awareness
-      </summary>
-      <p className="mt-3 text-gray-300 text-sm">
-        Through targeted campaigns and consistent messaging, we amplify your
-        brand presence across multiple channels.
-      </p>
-    </details>
-
-    {/* Item 5 */}
-    <details className="border rounded-xl shadow-sm p-5 bg-[#0F172A]">
-      <summary className="font-semibold cursor-pointer text-white text-lg">
-        Beat Your Competition
-      </summary>
-      <p className="mt-3 text-gray-300 text-sm">
-        We conduct competitor analysis, identify gaps, and design strategies
-        that put your business ahead in the market.
-      </p>
-    </details>
+    {[
+      {
+        title: "Accelerate Your e-Commerce Store Sales",
+        desc: "Our proven strategies help optimize conversion funnels, reduce cart abandonment, and increase repeat purchases, ensuring steady revenue growth.",
+      },
+      {
+        title: "Increase Your Customer Satisfaction",
+        desc: "We implement customer-centric solutions such as personalized experiences, faster support, and loyalty programs to keep your customers happy.",
+      },
+      {
+        title: "Improve Your Search Rankings",
+        desc: "Our SEO-first approach ensures your brand ranks higher on search engines, driving organic traffic and long-term visibility.",
+      },
+      {
+        title: "Maximize Your Brand Awareness",
+        desc: "Through targeted campaigns and consistent messaging, we amplify your brand presence across multiple channels.",
+      },
+      {
+        title: "Beat Your Competition",
+        desc: "We conduct competitor analysis, identify gaps, and design strategies that put your business ahead in the market.",
+      },
+    ].map((item, i) => (
+      <details
+        key={i}
+        className={`border rounded-xl shadow-sm p-5 transition-all ${
+          isDark ? "bg-gray-900" : "bg-gray-100"
+        }`}
+      >
+        <summary className={`font-semibold cursor-pointer text-lg ${cardTextColor}`}>
+          {item.title}
+        </summary>
+        <p className={`mt-3 text-sm ${mutedTextColor}`}>{item.desc}</p>
+      </details>
+    ))}
   </div>
-  
+</section>
+
+{/* Trusted Brands */}
+<section id="trusted-brands" className="py-20 px-6 relative">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <h2
+        className={`text-4xl font-bold mb-4 bg-gradient-to-r ${
+          isDark ? "from-white to-gray-300" : "from-gray-900 to-gray-700"
+        } bg-clip-text text-transparent`}
+      >
+        Trusted by Leading Brands
+      </h2>
+      <p className={`${mutedTextColor} text-lg`}>
+        We proudly collaborate with top companies to deliver impactful results.
+      </p>
+    </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-items-center">
+      {
+        // Convert brands to objects so we can display partner metadata
+        [
+          { id: 'Urbangabru', display: 'Urbangabru', since: 2024, category: 'health personal care' },
+          { id: 'Wearslim', display: 'Wearslim', since: 2021, category: 'clothing accessories' },
+          { id: 'stitchnest', display: 'Stitchnest', since: 2022, category: 'sports fitness' },
+          { id: 'Agaro', display: 'Agaro', since: 2020, category: 'clothing accessories' },
+          { id: 'xmartindia', display: 'Xmartindia', since: 2022, category: 'home and kitchen' },
+          { id: 'amacom', display: 'Amacom', since: 2023, category: 'housekeeping' },
+          { id: 'urbanyog1', display: 'Urbanyog1', since: 2021, category: 'health personal care' },
+          { id: 'naturepurify', display: 'Naturepurify', since: 2022, category: 'health personal care' }
+        ].map((brand, i) => (
+          <div key={i} className="flex flex-col items-center text-center">
+            <img
+              src={`/assets/${brand.id}.jpg`}
+              alt={brand.display}
+              className="h-16 object-contain"
+            />
+            <span className={`mt-2 text-sm font-medium ${cardTextColor}`}>
+              {brand.display}
+            </span>
+            <span className={`mt-2 text-sm font-medium ${mutedTextColor}`}>
+              Partner - since {brand.since} 
+              • Category - {brand.category}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+{/* Accelerate Sales */}
+<section id="accelerate-sales" className="py-20 px-6 relative">
+  <div className="max-w-5xl mx-auto text-center">
+    <h2
+      className={`text-4xl font-bold mb-6 bg-gradient-to-r ${
+        isDark ? "from-white to-gray-300" : "from-gray-900 to-gray-700"
+      } bg-clip-text text-transparent`}
+    >
+      Accelerate Your E-Commerce Store Sales
+    </h2>
+    <p className={`${mutedTextColor} text-lg max-w-3xl mx-auto mb-10`}>
+      Brand buildup engagement enhances your sales on every e-commerce
+      platform. The influence of positive responses increases product
+      sales by considering buyer behavior and platform algorithms.
+    </p>
+    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-2xl shadow-lg transition-all duration-300">
+      Contact Us
+    </button>
+  </div>
 </section>
 
      
@@ -891,7 +925,7 @@ const DigiPullWebsite = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              Digihub
+              Digimond
               </div>
               <p className={`${mutedTextColor} leading-relaxed`}>
                 Technology-driven premier provider of Online Reputation Management services based in Indore. 
@@ -940,7 +974,7 @@ const DigiPullWebsite = () => {
       </div>
       <div>
         <div className={`${cardTextColor} font-semibold text-sm`}>Email</div>
-        <div className={`${mutedTextColor} text-sm`}>admin@Digihub.in</div>
+  <div className={`${mutedTextColor} text-sm`}>binod@digimond.in</div>
       </div>
     </div>
 
@@ -949,9 +983,9 @@ const DigiPullWebsite = () => {
       <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center">
         <Phone className="h-5 w-5 text-white" />
       </div>
-      <div>
+        <div>
         <div className={`${cardTextColor} font-semibold text-sm`}>Phone & WhatsApp</div>
-        <div className={`${mutedTextColor} text-sm`}>+918445728401</div>
+        <div className={`${mutedTextColor} text-sm`}>7870878590</div>
       </div>
     </div>
 
@@ -963,10 +997,10 @@ const DigiPullWebsite = () => {
       <div>
         <div className={`${cardTextColor} font-semibold text-sm`}>Registered Address</div>
         <p className={`${mutedTextColor} text-sm`}>
-          19B Teachers Colony Agra, Uttar Pradesh, India 282002
+          Barwadda Dhanbad, Jharkhand, India 826004
         </p>
         <p className={`${isDark ? 'text-gray-500' : 'text-gray-400'} text-xs mt-1`}>
-          Legal Name: Binod Kumar
+          Legal Name: Bishnu Kumar Saw (REGISTERED NAME )
         </p>
       </div>
     </div>
