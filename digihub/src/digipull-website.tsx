@@ -29,6 +29,7 @@ const BackgroundBeams = ({ isDark }: { isDark: boolean }) => (
     <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br ${isDark ? 'from-blue-600/30 to-purple-600/30' : 'from-blue-300/20 to-purple-300/20'} blur-3xl animate-pulse`}></div>
     <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br ${isDark ? 'from-purple-600/30 to-pink-600/30' : 'from-purple-300/20 to-pink-300/20'} blur-3xl animate-pulse delay-1000`}></div>
     <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-br ${isDark ? 'from-cyan-600/20 to-blue-600/20' : 'from-cyan-300/15 to-blue-300/15'} blur-3xl animate-pulse delay-500`}></div>
+    <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-br ${isDark ? 'from-cyan-600/20 to-blue-600/20' : 'from-cyan-300/15 to-blue-300/15'} blur-3xl animate-pulse delay-500`}></div>
     
     {/* Floating particles */}
     {[...Array(15)].map((_, i) => (
@@ -294,9 +295,70 @@ const SparklesCore = ({ className, isDark }: { className?: string; isDark: boole
 );
 
 
+// Rating components: detailed breakdown and simple list
+const RatingBreakdown = ({ isDark, counts }: { isDark: boolean; counts?: number[] }) => {
+  // counts for 5,4,3,2,1
+  const defaultCounts = counts ?? [1270, 430, 210, 80, 25];
+  const total = defaultCounts.reduce((a, b) => a + b, 0) || 1;
+
+  return (
+    <div className={`max-w-md mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
+      {defaultCounts.map((c, idx) => {
+        const stars = 5 - idx;
+        const pct = Math.round((c / total) * 100);
+        return (
+          <div key={stars} className="flex items-center space-x-3 mb-3">
+            <div className="w-20 text-sm font-medium flex items-center space-x-1">
+              <Star className="w-4 h-4 text-yellow-400" />
+              <span>{stars} star</span>
+            </div>
+            <div className="flex-1 bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div
+                className={`h-3 ${isDark ? 'bg-blue-500' : 'bg-blue-600'}`}
+                style={{ width: `${pct}%` }}
+              />
+            </div>
+            <div className="w-12 text-right text-xs text-gray-400">{pct}%</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const SimpleStarList = ({ isDark }: { isDark: boolean }) => {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  return (
+    <div className="flex flex-col items-center space-y-3">
+      <div className="flex items-center justify-center space-x-4">
+        {[1, 2, 3, 4, 5].map((n) => {
+          const isSelected = selected === n;
+          // text size grows with n to create visual impact
+          const textSize = n === 5 ? 'text-4xl' : n === 4 ? 'text-3xl' : n === 3 ? 'text-2xl' : 'text-lg';
+          return (
+            <button
+              key={n}
+              onClick={() => setSelected(n)}
+              aria-label={`${n} star`}
+              className={`px-3 py-2 rounded-md transition-transform duration-150 ${isSelected ? 'scale-105 ring-2 ring-offset-2 ring-indigo-500' : ''} ${isDark ? 'bg-white/5' : 'bg-gray-100'} focus:outline-none`}
+            >
+              <div className={`${textSize} font-mono ${isDark ? 'text-yellow-300' : 'text-yellow-600'}`}>{'*'.repeat(n)}</div>
+            </button>
+          );
+        })}
+      </div>
+
+     
+    </div>
+  );
+};
+
+
 const DigiPullWebsite = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const [showDetailedRating, setShowDetailedRating] = useState(true);
 
   useEffect(() => {
     setIsVisible(true);
@@ -519,25 +581,7 @@ const DigiPullWebsite = () => {
                 </div>
                 
 
-                {/* Features List */}
-                <div className="space-y-4 mb-8">
-                  {[
-                    'Increase customer trust and credibility',
-                    'Boost online visibility and search rankings', 
-                    'Drive more qualified leads and conversions',
-                    'Build long-term brand loyalty',
-                    'Dominate your market competition'
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-3 group">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <CheckCircle className="h-4 w-4 text-white" />
-                      </div>
-                      <span className={`${mutedTextColor} group-hover:${isDark ? 'text-white' : 'text-gray-900'} transition-colors duration-300`}>
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                
 
                 <MovingBorder isDark={isDark} className="inline-block">
                   <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-2xl hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center space-x-2 group">
@@ -550,82 +594,52 @@ const DigiPullWebsite = () => {
             
 
             {/* Right Image with Animation */}
-            <div className="relative">
-              {/* Animated Background Elements */}
-              <div className="absolute inset-0 overflow-hidden rounded-3xl">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-2xl animate-pulse"></div>
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-              </div>
+            
+            <div className="relative z-10">
+              
+           
 
-              {/* Main Image Container */}
-              <div className="relative z-10 group">
-                <MovingBorder isDark={isDark} className="overflow-hidden">
-                  <div className="relative p-8 h-96 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-sm">
-                    {/* Animated Chart/Graph */}
-                    <div className="h-full flex items-end justify-center space-x-2">
-                      {[65, 45, 85, 75, 95, 55, 80, 90].map((height, index) => (
-                        <div key={index} className="relative group">
-                          <div 
-                            className={`bg-gradient-to-t from-blue-500 to-purple-500 rounded-t-lg transition-all duration-1000 delay-${index * 200} group-hover:from-purple-500 group-hover:to-pink-500`}
-                            style={{ 
-                              width: '24px', 
-                              height: `${height}%`,
-                              animationDelay: `${index * 0.2}s`
-                            }}
-                          />
-                          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-xs text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                            {height}%
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Floating Elements */}
-                    <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center animate-bounce">
-                      <TrendingUp className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center animate-bounce delay-300">
-                      <Star className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center animate-bounce delay-700">
-                      <Award className="w-4 h-4 text-white" />
-                    </div>
-
-                    {/* Animated Lines */}
-                    <div className="absolute inset-0 overflow-hidden">
-                      <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-pulse"></div>
-                      <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/50 to-transparent animate-pulse delay-500"></div>
-                      <div className="absolute top-3/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-pink-400/50 to-transparent animate-pulse delay-1000"></div>
-                    </div>
-
-                    {/* Growth Arrow */}
-                    <div className="absolute bottom-8 right-8 transform rotate-45">
-                      <div className="w-16 h-16 border-4 border-green-400 border-dashed rounded-full animate-spin-slow flex items-center justify-center">
-                        <ArrowRight className="w-6 h-6 text-green-400 -rotate-45" />
-                      </div>
-                    </div>
-                  </div>
-                </MovingBorder>
-
-                {/* Floating Numbers */}
-                <div className="absolute -top-6 -left-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full font-bold text-sm animate-bounce">
-                  +127%
-                </div>
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-full font-bold text-sm animate-bounce delay-500">
-                  ROI ↗
-                </div>
-                <div className="absolute top-1/2 -right-8 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full font-bold text-xs animate-bounce delay-1000">
-                  5⭐
-                </div>
+              <div className="mt-6">
+                {showDetailedRating ? (
+                  <RatingBreakdown isDark={isDark} />
+                ) : (
+                  <SimpleStarList isDark={isDark} />
+                )}
               </div>
             </div>
+            
           </div>
         </div>
 
 
 
-        
+        <section id="services" className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+            <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
+              Customize for business team like yours
+            </h2>
+            <p className={`${mutedTextColor} max-w-2xl mx-auto text-lg`}>
+             At Digimond we focus on utilizing technology innovation and capital in services to drive long-term value creation and economic growth.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <GradientCard key={index} className="p-8 group cursor-pointer" isDark={isDark}>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.gradient} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="h-full w-full text-white" />
+                </div>
+                <h3 className={`text-2xl font-bold ${cardTextColor} mb-4`}>{service.title}</h3>
+                <p className={`${mutedTextColor} leading-relaxed`}>{service.description}</p>
+                <div className="mt-6 flex items-center text-blue-400 font-semibold group-hover:text-purple-400 transition-colors">
+                  Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </GradientCard>
+            ))}
+          </div>
+        </div>
+      </section>
         
         
         <section className={`py-20 px-6 relative ${isDark ? 'bg-black' : 'bg-gray-50'}`}>
@@ -637,7 +651,7 @@ const DigiPullWebsite = () => {
 
     {/* Subheading text */}
     <p className={`text-xl ${mutedTextColor} max-w-2xl mx-auto mb-12`}>
-      Why trust, ratings, and reviews drive success in eCommerce.
+      Why trust  ratings  and reviews drive success in eCommerce.
     </p>
   </div>
 
@@ -738,33 +752,7 @@ const DigiPullWebsite = () => {
       
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-            <h2 className={`text-5xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-white to-gray-300' : 'from-gray-900 to-gray-700'} bg-clip-text text-transparent`}>
-              Customize for business team like yours
-            </h2>
-            <p className={`${mutedTextColor} max-w-2xl mx-auto text-lg`}>
-             At Digimond we focus on utilizing technology innovation and capital in services to drive long-term value creation and economic growth.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <GradientCard key={index} className="p-8 group cursor-pointer" isDark={isDark}>
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.gradient} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="h-full w-full text-white" />
-                </div>
-                <h3 className={`text-2xl font-bold ${cardTextColor} mb-4`}>{service.title}</h3>
-                <p className={`${mutedTextColor} leading-relaxed`}>{service.description}</p>
-                <div className="mt-6 flex items-center text-blue-400 font-semibold group-hover:text-purple-400 transition-colors">
-                  Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
-                </div>
-              </GradientCard>
-            ))}
-          </div>
-        </div>
-      </section>
+      
       <section id="stats" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -1009,7 +997,7 @@ const DigiPullWebsite = () => {
 
           <div className={`border-t ${isDark ? 'border-white/10' : 'border-gray-200'} pt-8 text-center`}>
             <p className={mutedTextColor}>
-              © 2016-2025 DIGIPULL™ is a registered trademark. All Rights Reserved.
+              © 2018-2025 Digimond ™ is a registered trademark. All Rights Reserved.
             </p>
           </div>
         </div>
